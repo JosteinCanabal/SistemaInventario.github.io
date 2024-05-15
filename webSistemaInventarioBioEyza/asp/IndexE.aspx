@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="webSistemaInventarioBioEyza.asp.Index" %>
-
+﻿%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="webSistemaInventarioBioEyza.asp.Index" %>
+<!--Index para empleados -->
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -80,10 +80,6 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="consultarRetiros.aspx" style="font-size: 14px; padding-top:20px;">Consultar Cajas</a>
                     </li>
-                    
-                    <li class="nav-item active">
-                        <asp:Button ID="RegistrarEmpleadosLink" runat="server" Text="Agregar empleado" CssClass="submit-button" OnClick="RegistrarEmpleadosLink_Click" />
-                    </li>
                     <li class="nav-item active">
                         <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar sesión" OnClick="btnCerrarSesión_Click" CssClass="button-cerrar-sesion" />
                     </li>
@@ -133,7 +129,7 @@
                     <div class="col-sm-7">
                         <div class="image_main">
                             <div class="main">
-                                <img src="../img/image00003.jpeg" alt="Avatar" class="image" style="width: 625px; height: 100%">
+                                <img src="../img/image00003.jpeg" alt="Avatar" class="image" style="width: 625px; height: 450px">
                             </div>
                         </div>
                     </div>
@@ -153,25 +149,22 @@
     <div class="footer_section layout_padding">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-3 col-sm-6 text-align: left">
+            <div class="col-lg-3 col-sm-6 text-center">
                 <h1 class="adderss_text">Contactanos</h1>
                 <div class="map_icon">
                     <img src="../img/hoja (1).ico"/><span class="paddlin_left_0">bioeyza.com</span>
                 </div>
                 <div class="map_icon">
-                    <img src="../img/pngtree-whatsapp-icon-png-image_3584844.ico" <a href="https://wa.me/573164974471"/><span class="paddlin_left_0">3164974471</span>
-                  
+                    <img src="../img/pngtree-whatsapp-icon-png-image_3584844.ico"/><span class="paddlin_left_0">3164974471</span>
                 </div>
                 <div class="map_icon">
                     <img src="../img/gmail_mail_google_mint_icon_134941.ico"/><span class="paddlin_left_0">BioEyza@gmail.com</span>
-
                 </div>
             </div>
-            <div class="col-lg-3 col-sm-6 text-align: left">
-                <h1 class="adderss_text" style="text-align: left;">BIOYEZA S.A.S</h1>
+            <div class="col-lg-3 col-sm-6 text-center">
+                <h1 class="adderss_text">BIOYEZA S.A.S</h1>
                 <div class="hiphop_text_1">Somos fabricantes y distribuidores de productos elaborados a base de pulpa de bagazo de caña de azúcar para reemplazar el uso de plásticos e icopor, por una opción amigable con el medio ambiente, 100% reciclable y biodegradable.</div>
             </div>
-
             <div class="col-lg-3 col-sm-6 text-center">
                 <div class="social_icon">
                     <ul>

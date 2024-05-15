@@ -184,7 +184,7 @@ namespace webSistemaInventarioBioEyza.Html
 
             Response.Clear();
             Response.AddHeader("content-disposition", "attachment;filename=EjemploGrid.xls");
-            Response.ContentType = "application/vnd.xls";
+            Response.ContentType = "application/vnd.xls"; // Retorna en formato excel
 
             StringWriter stringWriter = new StringWriter();
             HtmlTextWriter htmlTextWriter = new HtmlTextWriter(stringWriter);

@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="../Css/Register.css" rel="stylesheet" />
-    <link rel="icon" href="../img/ICON BIOOOOO.png" type="image/x-icon">
+    <link rel="icon" href="../img/ICON BIOOOOO.png" type="image/x-icon"/>
     <link rel="stylesheet" href="../Css/bootstrap.min.css" />
 <!-- style css -->
 <link rel="stylesheet" href="../Css/style.css" />
@@ -29,7 +29,8 @@
                 <asp:Button runat="server" ID="btnRegistrar" CssClass="submit-button" Text="Registrar" OnClick="btnRegistrar_Click" />
                 <br />
                 <br />
-                <p>Regresar al <a href="index.aspx">Inicio</a></p>
+                <asp:Button ID="btnInicio" runat="server" Text="Regresar al Inicio" OnClientClick="window.location.href='index.aspx'; return false;" CssClass="btn btn-success" />
+
             </div>
         </div>
     </form>

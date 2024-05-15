@@ -27,6 +27,10 @@
 
 /*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
 
+.delete-button { /*Estilo del boton elimnar en mostrar inventra*/
+    font-weight: bold;
+}
+
 * {
     box-sizing: border-box !important;
     transition: ease all 0.5s;
@@ -392,8 +396,8 @@ button {
     content: '';
     position: absolute;
     background-color: #b5f2b1;
-    height: 450px;
-    width: 300px;
+    height: 900px;
+    width: 1160px;
     left: 0px;
     right: initial;
     z-index: -1;

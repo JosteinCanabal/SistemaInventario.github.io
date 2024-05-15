@@ -83,7 +83,7 @@ namespace webSistemaInventarioBioEyza.Html
                 string message = command.Parameters["@p_message"].Value.ToString();
 
                 // Mostrar el mensaje al usuario
-                ScriptManager.RegisterStartupScript(this, GetType(), "showalert", $"alert('{message}');", true);
+                ScriptManager.RegisterStartupScript(this, GetType(), "showalert", $"alert('.{message}');", true);
 
                 txtNombreCaja.Text = "";
                 txtCantidadRetirar.Text = "";

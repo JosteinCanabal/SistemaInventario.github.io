@@ -290,6 +290,7 @@
     <Content Include="asp\consultarRetiros.aspx" />
     <Content Include="asp\editarCaja.aspx" />
     <Content Include="asp\Index.aspx" />
+    <Content Include="asp\IndexE.aspx" />
     <Content Include="Css\animate.min.css" />
     <Content Include="Css\bootstrap.css" />
     <Content Include="Css\bootstrap.min.css" />

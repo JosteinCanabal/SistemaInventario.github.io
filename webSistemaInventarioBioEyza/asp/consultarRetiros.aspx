@@ -11,9 +11,8 @@
     <link rel="stylesheet" href="../Css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../Css/style.css"/>
         <!-- Agregar referencias a jQuery y jQuery UI -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <!-- Script para inicializar el DatePicker -->
     <script>
@@ -36,7 +35,7 @@
         };
         $.datepicker.setDefaults($.datepicker.regional['es']);
         $(function () {
-            $("#fecha").datepicker();
+            $("#fecha2").datepicker();
         });
     $(document).ready(function () {
         $("#<%=txtFechaInicio.ClientID%>").datepicker({
@@ -65,7 +64,7 @@
         };
         $.datepicker.setDefaults($.datepicker.regional['es']);
         $(function () {
-            $("#fecha").datepicker();
+            $("#fecha3").datepicker();
         });
         $(document).ready(function () {
             $("#<%=txtFechaFinal.ClientID%>").datepicker({
@@ -145,10 +144,10 @@
     </div>
 </nav>
         
-        <div class="container">
+      <!--  <div class="container">
             <h2 style="text-align: center;">Consultar retiro de cajas</h2>
 
-    <!-- Filtro por código de factura -->
+     Filtro por código de factura
             <div class="form-group">
             <label for="txtCodigoFactura">Código de Factura:</label>
 
@@ -156,24 +155,49 @@
                 <br />  
                 <br />
             <asp:Button ID="btnFiltrarCodigoFactura" runat="server" Text="Filtrar por Código de Factura" CssClass="submit-button" OnClientClick="return validarCodigoFactura(); " OnClick="btnFiltrarCodigoFactura_Click" />
-        </div>
+                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False">
+                <Columns>
+                    <asp:BoundField DataField="nombreCaja" HeaderText="Nombre de la Caja" />
+                    <asp:TemplateField HeaderText="Fecha de Salida">
+                    <ItemTemplate>
+                        <%# Convert.ToDateTime(Eval("fechaSalida")).ToString("dd/MM/yyyy") %>
+                    </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:BoundField DataField="cantidadRetirada" HeaderText="Cantidad Retirada" />
+                    <asp:BoundField DataField="destinatario" HeaderText="Destinatario" />
+                    <asp:BoundField DataField="codigoFactura" HeaderText="Código de Factura" />
+                    <asp:BoundField DataField="etiquetaCaja" HeaderText="Etiqueta caja" />
+                    <asp:BoundField DataField="comentario" HeaderText="Comentario (Opcional)" />
+                    <asp:BoundField DataField="usuario_retirada" HeaderText="Usuario de Retiro" />
+                    <asp:BoundField DataField="tipo_inventario" HeaderText="Tipo de Inventario" />
+                </Columns>
+            </asp:GridView>
+        </div> 
 
-            <br />
+            <br />-->
     <!-- Filtro por fecha -->
             <div class="form-group">
-                <label for="txtFechaInicio">Fecha de Inicio:</label>
-                <asp:TextBox ID="txtFechaInicio" runat="server" CssClass="textbox"></asp:TextBox>
-                <label for="txtFechaFin">Fecha de Fin:</label>
-                <asp:TextBox ID="txtFechaFinal" runat="server" CssClass="textbox"></asp:TextBox>
-                <asp:Button ID="btnFiltrarFecha" runat="server" Text="Filtrar por Fecha"  OnClick="btnFiltrarFecha_Click"  CssClass="submit-button" OnClientClick="return validarFechaInicio() && validarFechaFinal();" />
+               <!--  -->
             </div>
-            <br />
+            <br /> 
 
         <div class="container">
 
             <h2 style="text-align: center;">Consultar retiro de cajas</h2>
             <label for="txtBuscarCaja">Buscar caja por nombre o etiqueta: </label>
-            <asp:TextBox ID="txtBuscarCaja" runat="server" CssClass="textbox" ClientIDMode="Static" placeholder="Buscar caja específica..." AutoPostBack="true" OnTextChanged="txtBuscarCaja_TextChanged"></asp:TextBox>
+            <asp:TextBox ID="txtBuscarCaja" runat="server" CssClass="textbox" ClientIDMode="Static" placeholder="Buscar caja específica..."></asp:TextBox>
+            <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="search-button" OnClick="btnBuscar_Click" />
+
+            <label for="txtBuscarCaja2">Buscar caja por codigo de factura: </label>
+            <asp:TextBox ID="txtBuscarCaja2" runat="server" CssClass="textbox" ClientIDMode="Static" placeholder="Buscar caja específica..."></asp:TextBox>
+            <asp:Button ID="btnBuscar2" runat="server" Text="Buscar" CssClass="search-button" OnClick="btnBuscar2_Click" />
+
+                <label for="txtFechaInicio">Fecha de Inicio:</label>
+                <asp:TextBox ID="txtFechaInicio" runat="server" CssClass="textbox"></asp:TextBox>
+                <label for="txtFechaFin">Fecha de Fin:</label>
+                <asp:TextBox ID="txtFechaFinal" runat="server" CssClass="textbox"></asp:TextBox>
+                <asp:Button ID="btnFiltrarFecha" runat="server" Text="Filtrar por Fecha"  OnClick="btnFiltrarFecha_Click"  CssClass="submit-button" OnClientClick="return validarFechaInicio() && validarFechaFinal();" />
+
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
                 <Columns>
                     <asp:BoundField DataField="nombreCaja" HeaderText="Nombre de la Caja" />
